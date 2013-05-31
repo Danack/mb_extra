@@ -1,0 +1,13 @@
+{
+	"name": "intahwebz/flickrguzzle",
+	"description": "A collection of PHP multi-byte string functions that are not present in the mb_string extension.",
+	"keywords": ["php", "mb_string", "utf8", "UTF-8"],
+	"license": "MIT",
+	"authors": [
+		{
+			"name": "Dan Ackroyd",
+			"email": "Danack@basereality.com",
+			"homepage": "http://www.basereality.com"
+		}
+	],
+}
