@@ -1,5 +1,5 @@
 {
-	"name": "intahwebz/flickrguzzle",
+	"name": "intahwebz/mb_extra",
 	"description": "A collection of PHP multi-byte string functions that are not present in the mb_string extension.",
 	"keywords": ["php", "mb_string", "utf8", "UTF-8"],
 	"license": "MIT",
