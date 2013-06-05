@@ -2,6 +2,7 @@
 
 // mb_string - the missing functions.
 // all these functions are meant to be the mb_ equivalent of their non-multi-byte-safe versions.
+// If they are not, then they have a bug. Please consider fixing and sending a pull request.
 
 function mb_ucfirst($string){
 	return mb_convert_case($string, MB_CASE_UPPER);
