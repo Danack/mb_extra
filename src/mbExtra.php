@@ -11,6 +11,12 @@ function mb_ucwords($string){
 	return mb_convert_case($string, MB_CASE_TITLE);
 }
 
+
+function mb_lcfirst($str) {
+	return mb_strtolower(mb_substr($str,0,1)).mb_substr($str,1);
+}
+
+
 function mb_str_split($str, $l = 0) {
 	if ($l > 0) {
 		$ret = array();
