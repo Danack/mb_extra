@@ -1,5 +1,19 @@
 <?php
 
+namespace Intahwebz\MBExtra{
+
+
+class Functions{
+	public static function wtf(){
+	}
+}
+
+}
+
+
+
+namespace {
+
 // mb_string - the missing functions.
 // all these functions are meant to be the mb_ equivalent of their non-multi-byte-safe versions.
 // If they are not, then they have a bug. Please consider fixing and sending a pull request.
@@ -135,6 +149,6 @@ function mb_str_replace($search, $replace, $subject, &$count = 0) {
 }
 
 
-
+}
 
 ?>
