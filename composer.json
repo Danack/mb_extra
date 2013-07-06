@@ -9,5 +9,11 @@
 			"email": "Danack@basereality.com",
 			"homepage": "http://www.basereality.com"
 		}
-	]
+	],
+
+    "autoload": {
+        "psr-0": {
+            "Intahwebz": "src/"
+        }
+    },
 }
