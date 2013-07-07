@@ -1,4 +1,3 @@
-
 mb_extra
 ========
 
@@ -10,6 +9,6 @@ How to use
 
 Either:
 
-- require_once the file from the vendors directory.
+- require_once the file `mb_extra/src/Intahwebz/MBExtra/Functions.php` from the vendors directory.
 
 - Call `\Intahwebz\MBExtra\Functions::load();` which invoke Composer's autoloader to magically insert the functions into the current PHP process.
