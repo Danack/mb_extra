@@ -4,7 +4,7 @@ namespace Intahwebz\MBExtra{
 
 
 class Functions{
-	public static function wtf(){
+	public static function load(){
 	}
 }
 

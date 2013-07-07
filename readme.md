@@ -7,4 +7,9 @@ A collection of PHP multi-byte string functions that are not present in the mb_s
 
 How to use
 ==========
-As all the functions are procedural, you need to require_once the file from the vendors directory.
+
+Either:
+
+- require_once the file from the vendors directory.
+
+- Call `\Intahwebz\MBExtra\Functions::load();` which invoke Composer's autoloader to magically insert the functions into the current PHP process.
