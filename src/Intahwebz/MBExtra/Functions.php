@@ -150,5 +150,3 @@ function mb_str_replace($search, $replace, $subject, &$count = 0) {
 
 
 }
-
-?>
