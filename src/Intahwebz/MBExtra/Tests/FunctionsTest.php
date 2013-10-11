@@ -81,8 +81,6 @@ class MBExtraTest extends \PHPUnit_Framework_TestCase {
     }
 
     function testmb_wordwrap() {
- 
-        
         $string = 'thislisalongstring';
         $width = strlen($string);
         $expectedResult = $string."\n".$string."\n".$string;
@@ -99,6 +97,9 @@ class MBExtraTest extends \PHPUnit_Framework_TestCase {
         $text = "The quick brown fox jumped over the lazy dog.";
         $result = mb_wordwrap($text, 20, "<br />\n");
         $this->assertEquals($expected, $result);
+
+        $this->assertEquals("A very\nlong\nwooooooo\nooooord.", mb_wordwrap("A very long woooooooooooord.", 8, "\n", true));
+
     }
 
     function testmb_str_replace() {

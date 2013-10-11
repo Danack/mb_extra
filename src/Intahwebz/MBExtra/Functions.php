@@ -95,30 +95,39 @@ function mb_substr_replace($string, $replacement, $start, $length = null, $encod
     return mb_substr($string, 0, $start, $encoding) . $replacement . mb_substr($string, $start + $length, $string_length - $start - $length, $encoding);
 }
 
-function mb_wordwrap($string, $width=75, $break="\n", $cut=false)
-{
-    $width = intval($width); //Used in match - don't trust input
-
-    if($cut) {
-        // Match anything 1 to $width chars long followed by whitespace or EOS,
-        // otherwise match anything $width chars long
-        $search = '/(.{1,'.$width.'})(?:\s|$)|(.{'.$width.'})/uS';
-        $replace = '$1$2'.$break;
-    } else {
-        // Anchor the beginning of the pattern with a lookahead
-        // to avoid crazy backtracking when words are longer than $width
-        $search = '/(?=\s)(.{1,'.$width.'})(?:\s|$)/uS';
-        $replace = '$1'.$break;
+function mb_wordwrap($str, $width = 75, $break = "\n", $cut = false) {
+    $lines = explode($break, $str);
+    foreach ($lines as &$line) {
+        $line = rtrim($line);
+        if (mb_strlen($line) <= $width) {
+            continue;
+        }
+        $words = explode(' ', $line);
+        $line = '';
+        $actual = '';
+        foreach ($words as $word) {
+            if (mb_strlen($actual.$word) <= $width) {
+                $actual .= $word.' ';
+            }
+            else {
+                if ($actual != '') {
+                    $line .= rtrim($actual).$break;
+                }
+                $actual = $word;
+                if ($cut) {
+                    while (mb_strlen($actual) > $width) {
+                        $line .= mb_substr($actual, 0, $width).$break;
+                        $actual = mb_substr($actual, $width);
+                    }
+                }
+                $actual .= ' ';
+            }
+        }
+        $line .= trim($actual);
     }
-    
-    $result = preg_replace($search, $replace, $string);
-    
-    $result = mb_substr($result, 0, strlen($result) - 1);
-    return $result;
-    
+
+    return implode($break, $lines);
 }
-
-
 
 /**
  * Replace all occurrences of the search string with the replacement string.
