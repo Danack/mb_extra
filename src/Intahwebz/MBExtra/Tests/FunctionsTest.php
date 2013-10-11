@@ -69,22 +69,15 @@ class MBExtraTest extends \PHPUnit_Framework_TestCase {
     }
 
     function testmb_substr_replace() {
-    //    mb_substr_replace($string, $replacement, $start, $length = null, $encoding = null)
         $var = 'ABCDEFGH:/MNRPQR/';
         $this->assertEquals('ABCDEFGH:/bob/', mb_substr_replace($var, 'bob', 10, -1));
-
         $this->assertEquals('ABCDEFGH:/MNRPQR/bob', mb_substr_replace($var, 'bob', 20, 0));
-
         $this->assertEquals('ABCDEFGH:/bob', mb_substr_replace($var, 'bob', 10, 10));
-
         $this->assertEquals('ABCDEFGH:/bob/', mb_substr_replace($var, 'bob', -7, -1));
-
         $this->assertEquals('bob', mb_substr_replace($var, 'bob', 0));
         $this->assertEquals('bob', mb_substr_replace($var, 'bob', 0, strlen($var)));
         $this->assertEquals('bob', mb_substr_replace($var, 'bob', 0, strlen($var) + 5));
-
         $this->assertEquals('bob', mb_substr_replace($var, 'bob', 0, null, "UTF-8"));
-        
     }
 
     function testmb_wordwrap() {
